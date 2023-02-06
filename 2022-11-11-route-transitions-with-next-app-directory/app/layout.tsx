@@ -2,6 +2,7 @@ import { Header } from "../components/header";
 import "../styles/globals.css";
 import { Lora } from "@next/font/google";
 import { Footer } from "../components/footer";
+import { PageWrapper } from "../components/page-wrapper";
 
 // We use Next's new font loader here, definitely check it out ;)
 // @see: https://beta.nextjs.org/docs/optimizing/fonts
@@ -21,7 +22,9 @@ export default function RootLayout({
       <head />
       <body>
         <Header />
-        {children}
+        <PageWrapper>
+          {children}
+        </PageWrapper>
         <Footer />
       </body>
     </html>

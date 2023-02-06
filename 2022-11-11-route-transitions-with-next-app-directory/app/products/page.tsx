@@ -8,7 +8,7 @@ export default function Home() {
   return (
     // Hiding the overflow for now, we're not building building the scrolling
     // functionality of the images ;)
-    <PageWrapper className="overflow-hidden">
+    <div className="overflow-hidden">
       <Container className="flex">
         <div className="flex w-[320px] min-w-[320px] flex-col border-r border-black py-12 pr-4">
           <h1 className="mb-4 text-6xl uppercase">Foldy</h1>
@@ -51,6 +51,6 @@ export default function Home() {
           />
         </div>
       </Container>
-    </PageWrapper>
+    </div>
   );
 }

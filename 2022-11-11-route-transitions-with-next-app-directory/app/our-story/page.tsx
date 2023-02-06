@@ -3,10 +3,10 @@ import { PageWrapper } from "../../components/page-wrapper";
 
 export default function Home() {
   return (
-    <PageWrapper>
+    <div>
       <Container>
         We think this page is a bit boring... How wood you rate this page?
       </Container>
-    </PageWrapper>
+    </div>
   );
 }
