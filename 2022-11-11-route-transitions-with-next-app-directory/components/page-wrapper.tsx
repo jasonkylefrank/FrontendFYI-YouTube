@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-// import { motion } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const PageWrapper = ({
@@ -26,17 +25,24 @@ export const PageWrapper = ({
     //  They state that the template.tsx file is a more-suitable option when you need enter/exit animations.
     //  So that's another approach that I need to try-out.
     //  See: https://beta.nextjs.org/docs/routing/pages-and-layouts#templates
+    //  
+    // With this commit's new changes, I am now using the template.tsx file for the instance of this component.
+    //  Unfortunately, the exit animation is not working with that approach either. But unlike when I tried using
+    //  <AnimatePresence> in this component and used an instance of this component in the layout.tsx file, the
+    //  animation does not do that weird behavior (see first paragraph above). Instead, it just completely ignores
+    //  the exit animation altogether.
     // 
-    // <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait">
       <motion.div
         key={pathname} // <-- Since pathname will change with each new route, this makes this element unmount / mount on each route change
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
         className={classNames("min-h-screenHeightWithoutHeader", className)}
       >
         {children}
       </motion.div>
-    // </AnimatePresence>
+    </AnimatePresence>
   );
 } 

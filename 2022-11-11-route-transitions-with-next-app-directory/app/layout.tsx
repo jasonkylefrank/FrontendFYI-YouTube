@@ -22,9 +22,9 @@ export default function RootLayout({
       <head />
       <body>
         <Header />
-        <PageWrapper>
+        {/* <PageWrapper> */}
           {children}
-        </PageWrapper>
+        {/* </PageWrapper> */}
         <Footer />
       </body>
     </html>
